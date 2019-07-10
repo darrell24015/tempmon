@@ -1,5 +1,7 @@
 """
 Raspberry Pi 4 CPU Temperature Monitor
+Author: Darrell Little http://yatb.devcali.co
+Date: 07/08/2019
 Based on the Raspberry Pi Foundation Project
 https://projects.raspberrypi.org/en/projects/temperature-log
 Data logged on AdafruitIO
