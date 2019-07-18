@@ -26,10 +26,18 @@ def write_temp(temp):
     with open("/home/pi/logs/cpu_temp.csv", "a") as log:
         log.write("{0},{1}\n".format(strftime("%Y-%m-%d %H:%M:%S"),str(temp)))
 
-while True:
-    temp = cpu.temperature
-    write_temp(temp)
-    aio.send(cpu_temp.key, temp)
-    sleep(delay)
+try:
+    while True:
+        temp = cpu.temperature
+        print(f"Data logged: {temp}")
+        write_temp(temp)
+        aio.send(cpu_temp.key, temp)
+        sleep(delay)
+except KeyboardInterrupt:
+    print(" Keyboard Interrupt - Program Cancelled")
+except IOError:
+    print("There was an error opening the file")
+except Exception as e :
+    print(f"There was an unknown error: {e}")
 
 
