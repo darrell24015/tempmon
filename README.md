@@ -38,6 +38,9 @@ adafruit_io_username = creds.username
 adafruit_io_key = creds.key
 aio = Client(adafruit_io_username, adafruit_io_key)
 ```
+
+Take a look at the code in cpu_tempmon.py for further comments.
+
 Have fun!
  
  
