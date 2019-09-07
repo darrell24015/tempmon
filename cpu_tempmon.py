@@ -11,7 +11,7 @@ Creating an AdafruitIO Data Feed
 https://learn.adafruit.com/adafruit-io-basics-feeds/creating-a-feed
 """
 # Import the libraries needed
-from gpiozero import CPUTemperature # For CPU temperature
+from gpiozero import CPUTemperature # Capture CPU temperature
 from time import sleep, strftime, time
 import psutil # Capture CPU usage
 import creds
@@ -21,7 +21,7 @@ from Adafruit_IO import Client
 adafruit_io_username = creds.username
 adafruit_io_key = creds.key
 aio = Client(adafruit_io_username, adafruit_io_key)
-delay = 60
+delay = 240
 
 # Create an instance for each data feed using the key
 cpu_temp = aio.feeds('cpu-temp')
@@ -48,6 +48,6 @@ try:
 except KeyboardInterrupt:
     print(" Keyboard Interrupt - Program Cancelled")
 except IOError:
-    print("There was an error opening the file")
+    print(" There was an error opening the file")
 except Exception as e :
-    print(f"There was an unknown error: {e}")
+    print(f" There was an unknown error: {e}")
