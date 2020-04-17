@@ -40,7 +40,14 @@ aio = Client(adafruit_io_username, adafruit_io_key)
 ```
 
 Create a log file in the path of your choice before running. If not present, it will throw an error.
+
 /home/pi/logs/cpu_temp_load.csv
+
+If logging is not desired, comment out the line that calls that function.
+
+```python
+write_temp(temp,avg)
+```
 
 Take a look at the code in cpu_tempmon.py for further comments.
 
